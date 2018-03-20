@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>zookeeper_book</groupId>
+	<artifactId>zookeeper_book</artifactId>
+	<name>zookeeper_book</name>
+	<version>1.0.0</version>
+	<packaging>jar</packaging>
+
+
+	<!-- #################################配置Maven仓库开始######################################################################### -->
+	<repositories>
+		<repository>
+			<!-- <id>nexus</id> <name>Team Nexus Repository</name> <url>http://192.168.50.110:8081/content/groups/public</url> -->
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://192.168.10.212:30081/nexus/content/groups/public</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<!-- <id>nexus</id> <name>Team Nexus Repository</name> <url>http://192.168.50.110:8081/content/groups/public</url> -->
+			<id>nexus</id>
+			<name>Team Nexus Repository</name>
+			<url>http://192.168.10.212:30081/nexus/content/groups/public</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<!-- 发布仓库 -->
+	<distributionManagement>
+		<!-- 发布release仓库 -->
+		<repository>
+			<id>releases</id>
+			<name>releases</name>
+			<url>http://192.168.50.110:8081/content/repositories/releases/</url>
+		</repository>
+		<!-- 发布快照版本 -->
+		<snapshotRepository>
+			<id>Snapshots</id>
+			<name>Snapshots</name>
+			<url>http://192.168.50.110:8081/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<!-- #################################配置Maven仓库结束######################################################################### -->
+
+	<properties>
+		<source.encoding>UTF-8</source.encoding>
+		<java.version>1.6</java.version>
+		<!-- Maven plugin -->
+		<!-- <maven-source-plugin.version>2.0.3</maven-source-plugin.version> -->
+		<!-- <maven-compiler-plugin.version>2.0.2</maven-compiler-plugin.version> -->
+		<!-- <maven-jar-plugin.version>2.3.2</maven-jar-plugin.version> -->
+
+		<zookeeper.version>3.4.11</zookeeper.version>
+		<!-- <zkclient.version>0.2-SNAPSHOT</zkclient.version> -->
+		<!-- <zkclient.version>0.1</zkclient.version> -->
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.zookeeper</groupId>
+				<artifactId>zookeeper</artifactId>
+				<version>${zookeeper.version}</version>
+			</dependency>
+			<!-- <dependency> -->
+			<!-- <groupId>com.github.sgroschupf</groupId> -->
+			<!-- <artifactId>zkclient</artifactId> -->
+			<!-- <version>${zkclient.version}</version> -->
+			<!-- </dependency> -->
+			<dependency>
+				<groupId>com.101tec</groupId>
+				<artifactId>zkclient</artifactId>
+				<version>0.10</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-framework</artifactId>
+				<!-- <version>4.0.0</version> -->
+				<version>2.4.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-recipes</artifactId>
+				<version>2.4.2</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.curator</groupId>
+				<artifactId>curator-test</artifactId>
+				<version>2.4.2</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+		</dependency>
+		<!-- <dependency> -->
+		<!-- <groupId>com.github.sgroschupf</groupId> -->
+		<!-- <artifactId>zkclient</artifactId> -->
+		<!-- </dependency> -->
+		<dependency>
+			<groupId>com.101tec</groupId>
+			<artifactId>zkclient</artifactId>
+		</dependency>
+		<!-- curator -->
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-framework</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-recipes</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-test</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
